@@ -1,0 +1,20 @@
+notifications:
+  email: false
+
+cache:
+  yarn: true
+  directories:
+    - node_modules
+
+
+language: node_js
+node_js:
+  - "8.12"
+
+install:
+  - yarn
+
+script:
+  - yarn lint --no-fix
+  - yarn test:unit
+  - yarn test:e2e --headless
